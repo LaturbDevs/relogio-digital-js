@@ -1,0 +1,87 @@
+body {
+       margin: 0;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       height: 100vh;
+       background-color: #212121;
+}
+
+.clock {
+       text-align: center;
+       color: #fff;
+       font-family: Arial, sans-serif;
+}
+
+h2 {
+       font-size: 25px;
+       margin-bottom: 1.8rem;
+       user-select: none;
+}
+
+h1 {
+       --glow-color: rgb(217, 176, 255);
+       --glow-spread-color: rgba(191, 123, 255, 0.781);
+       --enhanced-glow-color: rgb(231, 206, 255);
+       --btn-color: rgb(100, 61, 136);
+       border: .25em solid var(--glow-color);
+       padding: .5rem;
+       color: var(--glow-color);
+       font-size: 25px;
+       font-weight: bold;
+       background-color: var(--btn-color);
+       border-radius: 1em;
+       outline: none;
+       user-select: none;
+       box-shadow: 0 0 1em .25em var(--glow-color),
+              0 0 4em 1em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+       text-shadow: 0 0 .5em var(--glow-color);
+       position: relative;
+       transition: all 0.3s;
+}
+
+h1::after {
+       pointer-events: none;
+       content: "";
+       position: absolute;
+       top: 120%;
+       left: 0;
+       height: 100%;
+       width: 100%;
+       background-color: var(--glow-spread-color);
+       filter: blur(2em);
+       opacity: .7;
+       transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+h1:hover {
+       color: var(--btn-color);
+       background-color: var(--glow-color);
+       box-shadow: 0 0 1em .25em var(--glow-color),
+              0 0 4em 2em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+}
+
+h1:active {
+       box-shadow: 0 0 0.6em .25em var(--glow-color),
+              0 0 2.5em 2em var(--glow-spread-color),
+              inset 0 0 .5em .25em var(--glow-color);
+}
+
+button {
+       padding: 10px 20px;
+       margin-top: .5rem;
+       font-size: 1em;
+       background-color: rgb(176, 91, 255);
+       color: #fff;
+       border: none;
+       border-radius: 5px;
+       cursor: pointer;
+       transition: background-color 0.3s ease;
+       user-select: none;
+}
+
+button:hover {
+       background-color: rgb(100, 61, 136)
+}
